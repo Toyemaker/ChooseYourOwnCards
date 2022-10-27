@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using System;
@@ -14,16 +15,19 @@ namespace ChooseYourOwnCards
     public class ChooseYourOwnCardsMod : BaseUnityPlugin
     {
         public static ManualLogSource DebugLogger;
+        public static ConfigFile Configuration;
+
+
         public const string pluginGuid = "toyemaker.plateup.chooseyourowncards";
         public const string pluginName = "Choose Your Own Cards";
-        public const string pluginVersion = "1.0";
+        public const string pluginVersion = "1.1";
 
         public void Awake()
         {
+            Configuration = Config;
+
             DebugLogger = Logger;
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), pluginGuid);
-
-            ConfigHelper.Initialize(Config);
         }
     }
 }

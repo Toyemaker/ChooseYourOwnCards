@@ -96,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChooseYourOwnCardsMod.cs" />
-    <Compile Include="ConfigHelper.cs" />
     <Compile Include="FindNewUnlocksPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
