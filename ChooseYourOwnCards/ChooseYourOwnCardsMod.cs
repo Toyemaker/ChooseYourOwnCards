@@ -24,9 +24,9 @@ namespace ChooseYourOwnCards
 
         public void Awake()
         {
-            Configuration = Config;
-
             DebugLogger = Logger;
+
+            Configuration = Config;
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), pluginGuid);
         }
     }
