@@ -29,5 +29,10 @@ namespace ChooseYourOwnCards
             Configuration = Config;
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), pluginGuid);
         }
+
+        public void Update()
+        {
+            
+        }
     }
 }
