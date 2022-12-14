@@ -25,16 +25,12 @@ namespace CYOC2
             {
                 if (state.MenuLeft == ButtonState.Pressed)
                 {
-                    Debug.Log("Haha! It Worked?!");
-
                     Main.Menu.ToggleCard(___Card, ___Index);
 
                     PreferenceUtils.Save("UserData/CYOC2/preferences.dat");
                 }
                 if (state.MenuRight == ButtonState.Pressed)
                 {
-                    Debug.Log("Swap time!");
-
                     MethodInfo setIndex = __instance.GetType().GetMethod("SetIndex", BindingFlags.NonPublic | BindingFlags.Instance);
 
                     if (CardSelectMenu.Collection[___Index].Header < CardSelectMenu.Collection[CardSelectMenu.Collection.Count - 1].Header)
