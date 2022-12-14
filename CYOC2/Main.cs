@@ -1,4 +1,5 @@
-﻿using Kitchen;
+﻿using BepInEx;
+using Kitchen;
 using KitchenData;
 using KitchenLib;
 using KitchenLib.Event;
@@ -13,6 +14,8 @@ using UnityEngine;
 
 namespace CYOC2
 {
+    [BepInProcess("PlateUp.exe")]
+    [BepInPlugin("toyemaker.plateup.cyoc2", "Choose Your Own Cards", "2.0.0")]
     public class Main : BaseMod
     {
         public static CardSelectMenu Menu;
@@ -20,20 +23,17 @@ namespace CYOC2
         public static bool IsActivated;
 
         public Main() : base("toyemaker.plateup.cyoc2", "Choose Your Own Cards", "Toyemaker", "2.0.0", ">=1.1.0 <=1.5.0", Assembly.GetExecutingAssembly()) { }
-        protected override void Initialise()
+
+        protected override void OnInitialise()
         {
+            
             IsActivated = false;
 
             SetupMenus();
 
             Debug.Log("[Choose Your Own Cards]: v2.0 loaded.");
 
-            base.Initialise();
-        }
-
-        protected override void OnUpdate()
-        {
-
+            base.OnInitialise();
         }
 
         private void SetupMenus()
