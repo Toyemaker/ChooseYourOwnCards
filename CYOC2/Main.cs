@@ -20,15 +20,11 @@ namespace CYOC2
         public static bool IsActivated;
 
         public Main() : base("toyemaker.plateup.cyoc2", "Choose Your Own Cards", "Toyemaker", "2.0.0", ">=1.1.0 <=1.5.0", Assembly.GetExecutingAssembly()) { }
-        protected override void Initialise()
+        protected override void OnPostActivate(Mod mod)
         {
             IsActivated = false;
-
             SetupMenus();
-
             Debug.Log("[Choose Your Own Cards]: v2.0 loaded.");
-
-            base.Initialise();
         }
 
         protected override void OnUpdate()
